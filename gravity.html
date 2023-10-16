@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1조 전일제 프로젝트</title>
+        <style>
+            * {
+                -ms-user-select: none; 
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+            html, body {
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                overflow: hidden;
+                background-image: linear-gradient(to right, rgb(87, 174, 255) 50%, #656565 50%);
+                padding: 0;
+                margin: 0;
+            }
+
+            .back {
+                border: 1px solid black;
+                cursor: pointer;
+                height: 100%;
+                width: 100%;
+            }
+
+            .Emove{
+                position: absolute;
+                animation-name: earth;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+            @keyframes earth {
+                0% {margin: 0 0 0 0;}
+                100%{margin: 100% 0 0 0;}
+            }
+
+            .move{
+                position: absolute;
+                animation-name: earth;
+                animation-duration: 9s;
+                animation-timing-function: ease-in;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+
+            .E{color: white; font-size: 300px; writing-mode: vertical-lr; padding: 0; line-height: 0; float: left;}
+            .M{color: #c8c8c8; font-size: 282px; writing-mode: vertical-rl; padding: 0; line-height: 0; float: right;}
+
+            #hoop{
+                background-color: white; 
+                border: 0;
+                border-radius: 75px; 
+                position: absolute; 
+                width: 46px; 
+                height: 46px;
+            }
+        </style>
+    </head>
+    
+    <body onclick = "clicks(event);">
+        <div class="back">
+            <p class="E">EARTH</p>
+            <p class="M">MOON</p>
+        </div>
+    </body>
+
+    <script>
+        const G = 9.8;
+
+        function clicks(event) {
+            let x = event.clientX;  
+            let y = event.clientY;
+            console.log(String(x), ",", String(y));
+
+            const C = document.createElement("div");
+            C.setAttribute("id", "hoop");
+            C.style.top = String(y-25) + "px";
+            C.style.left = String(x-25) + "px";
+            document.body.appendChild(C);
+
+            if ((x-25) <= innerWidth / 2) {
+                C.setAttribute("class", "Emove");
+            } else {
+                C.setAttribute("class", "move");
+            }
+        }
+    </script>
+</html>

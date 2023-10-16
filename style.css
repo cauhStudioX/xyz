@@ -1,0 +1,594 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    z-index: 5;
+    user-select: none;
+}
+#wrap{
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+#wrap2{
+    padding-bottom: 30px;
+}
+body::-webkit-scrollbar {
+    width: 0.5vw;  /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #808080; /* 스크롤바의 색상 */   
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    background-color: #e2e2e2;  /*스크롤바 뒷 배경 색상*/
+}
+body {
+    overflow: hidden;
+    animation: overflow 0s 2.1s 1 normal forwards;
+}
+
+/*헤더 작성 부분----------------------------------------------------------------------------------------  */
+a, a:link, a:visited{
+    color:inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header .container{
+    width: 100%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+header{
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid #808080;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    animation: appear 0.5s 2.45s normal forwards;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 10px;
+}
+header button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+header nav ul li button{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*여기서부터 본문 작성 부분-----------------------------------------------------------------------------  */
+div .arrow{
+    background-color: rgb(249, 113, 95); 
+    width:9em; 
+    height:3em; 
+    transform:skew(150deg); 
+    position: absolute; 
+    z-index: -1; 
+    left: 6vw; 
+    top: 22vh;
+}
+main {
+    width: 100%;
+    color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+main .container {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 70px;
+    flex-direction: column;
+    font-weight: 300;
+}
+main .grad {
+    background: linear-gradient(130deg, #ff6e7f, #bfe9ff 95%);
+}
+section {
+    position: relative;
+    top: 0vh;
+    width: 100%;
+    color:black;
+    margin: 0 auto;
+    padding-left:7.5vw;
+    padding-right:7.5vw;
+    text-align:left;
+}
+section .introcon p {
+    font-size: 1.1em;
+}
+section .about-us::after {
+    content:"";
+    clear: both;
+    display: block;
+}
+section .about-us .left { 
+    width: 50vw; 
+    float: left;
+}
+section .about-us .right {
+    width: 32vw;
+    float: left;
+    margin-left: 2.5vw;
+}
+section .actcon p {
+    width: 75%;
+}
+section .activities::after {
+    content:"";
+    clear: both;
+    display: block;
+}
+section .activities .left { 
+    width: 27vw; 
+    float: left;
+    margin-right: 1.75vw;
+}
+section .activities .middle {
+    width: 27vw;
+    float: left;
+    margin-right: 1.75vw;
+}
+section .activities .right {
+    width: 27vw;
+    float: left;
+}
+section .workcon2 p {
+    width: 50%;
+}
+section .workpieces {
+    margin-bottom: 5vh;
+}
+section .workpieces::after {
+    content:"";
+    clear: both;
+    display: block;
+}
+section .workpieces .left { 
+    width: 25vw; 
+    float: left;
+    margin-right: 1vw;
+}
+section .workpieces .middle {
+    width: 25vw;
+    float: left;
+    margin-right: 1vw;
+}
+section .workpieces .right {
+    width: 30vw;
+    float: left;
+    margin-left: 1.5vw;
+}
+section .workpieces .line {
+    width: 80%; 
+    height: 0.5em; 
+    background: linear-gradient(90deg, rgb(142, 220, 90), transparent); 
+    margin-bottom:5vh;
+}
+
+/*상호작용이 필요한 버튼들------------------------------------------------------------------------------  */
+.click{
+    padding: 1em;
+    width: 8.4em;
+    margin-top: 3vw;
+    border-radius: 5px / 5px;
+    box-sizing: border-box;
+    border: 4px solid rgb(110, 216, 50);
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.click:focus{
+    outline: none;
+}
+.click::before{
+    content: "GO!";
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-sizing: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px / 5px;
+    transform: skew(150deg);
+    background-color: rgb(110, 216, 50);
+    right: 120%;
+    top: 0;
+    z-index: 2;
+    transition: all 0.4s;
+    color:white;
+}
+.click:active{
+    transition: all 0.1s;
+    transform: scale(0.95);
+}
+.head-b{
+    color: rgb(105, 105, 105);
+}
+.head-b:focus {
+    outline: none;
+}
+.head-b:hover{
+    color:  rgb(249, 113, 95);
+    font-weight: 600;
+}
+
+/*푸터-------------------------------------------------------------------------------------------------  */
+.survey {
+    height: 15em;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bfe9ff;
+}
+.survey-button {
+    padding: 1em;
+    width: 30vw;
+    border-radius: 5px / 5px;
+    box-sizing: content-box;
+    border: 0px;
+    background:linear-gradient(110deg, #ff6e7f, #78caf7);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-left: 2em;
+}
+.survey-button::before {
+    content: "바로가기";
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    font-weight: bold;
+    font-size: 1.3em;
+    box-sizing: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px / 5px;
+    transition: all 0.3s;
+    background-color: transparent;
+    color: transparent;
+}
+.survey-button:focus{
+    outline: none;
+}
+footer {
+    height: 15em;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 3.5vh;
+    padding-left: 3em;
+    text-align: left;
+    color: #808080;
+    background-color: rgb(51 ,51, 51);
+    font-size: 0.7em;
+}
+footer a:hover {
+    color: #c4c4c4;
+}
+
+/*위로가기 버튼-----------------------------------------------------------------------------------------  */
+#upbutton {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #808080;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 25px / 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.4);
+}
+
+/*초기 화면 로딩시 애니메이션----------------------------------------------------------------------------  */
+#loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    z-index: 99998;
+    background-color: rgb(51 ,51, 51);
+    animation: loading 1s 2s 1 normal forwards;
+    font-weight: 500;
+    color: white;
+}
+#main-logo {
+    width: 60vw;
+    animation: tada 1.5s 2s 1 normal forwards;
+}
+#coffee, #shadow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    animation: coffee 0s 2s 1 normal forwards;
+}
+#shadow {
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(108deg, rgb(51, 51, 51) , rgb(20, 20, 20));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(-80px, 0px);
+    z-index: 99998;
+    border-radius: 5px;
+}
+.coffee {
+    background: white;
+    display: grid;
+    border-radius: 4px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    height: 40px;
+    position: relative;
+    width: 40px;
+    padding: 2px;
+    justify-items: center; 
+}
+.coffee:before {
+    box-sizing: border-box;
+    content: '';
+    height: 26px;
+    width: 20px;
+    border: 4px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -13px;
+    margin-left: -10px;
+    left: 100%;
+    border-radius: 4px; }
+.coffee div {
+    height: 20px;
+    width: 8px;
+    background: white;
+    opacity: 0.3;
+    animation: coffee 2s 1; }
+.coffee div:nth-child(1) {
+    animation-delay: 0.2s; }
+.coffee div:nth-child(2) {
+    animation-delay: 0.4s; }
+.coffee div:nth-child(3) {
+    animation-delay: 0.6s; }
+
+ /*애니메이션 키프레임 목록------------------------------------------------------------------------------  */
+@keyframes loading {
+    0%{
+        background-color: white;
+    }
+    100%{
+        background-color: transparent;
+        z-index: -2;
+    }
+}
+@keyframes tada {
+    0%{
+        opacity: 0.5;
+        width: 40vw;
+    }
+    50%{
+        opacity: 1;
+        width: 65vw;
+    }
+    75%{
+        width: 65vw;
+    }
+    100%{
+        width: 55vw;
+    }
+}
+@keyframes overflow {
+    0%{
+        overflow:hidden
+    }
+    100%{
+        overflow: visible;
+    }
+}
+@keyframes coffee {
+    100% {
+        opacity: 0;
+        transform: translateY(-200%);
+    } 
+}
+@keyframes appear {
+    100% {
+        opacity: 1;
+    }
+}
+/*여기서부터는 모바일 전용 css--------------------------------------------------------------------------  */
+@media (max-width: 768px) {
+    .click:active {
+        color:transparent;
+        transform: scale(0.97);
+        transition: all 0s;
+        background-color: rgb(110, 216, 50);
+    }
+    .click:active::before {
+        transition: all 0s;
+        transform: translateX(120%);
+    }
+    .survey-button:active {
+        transform: scale(0.97);
+        background-color: rgb(255, 110, 127);
+        color: transparent;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.4);
+    }
+    .survey-button:active::before{
+        background-color: #ff6e7f;
+        color: white;
+    }
+    #upbutton:active {
+        background-color: #e2e2e2;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.8);
+    }
+    @keyframes tada {
+        0%{
+            opacity: 0.5;
+            width: 40vw;
+        }
+        50%{
+            opacity: 1;
+            width: 90vw;
+        }
+        75%{
+            width: 90vw;
+        }
+        100%{
+            width: 75vw;
+        }
+    }
+}
+@media (max-width: 830px) {
+    html {
+        font-size: 11px;
+    }
+    div .arrow {
+        top : 21.2vh;
+        transform: skew(160deg);
+    }
+    section .about-us .right{
+        float: none;
+        padding: 0px;
+        margin-left: 0px;
+        width: 85%;
+    }
+    section .about-us .left {
+        width: 85vw;
+    }
+    section .workpieces {
+        margin-bottom: 2vh;
+    }
+    section .actcon p {
+        width: 80%;
+    }
+    section .activities .left {
+        width: 41.375vw;
+        margin-right: 1.75vw;
+    }
+    section .activities .middle {
+        width: 41.375vw;
+        margin-right: 0px;
+    }
+    section .activities .right {
+        width: 84.5vw;
+        margin-top: 1.75vw;
+    }
+    section .workpieces .right {
+        float: none;
+        padding: 0px;
+        padding-top: 45vw;
+        margin-left: 0px;
+        width: 100%;
+    }
+    section .workpieces .right h2 {
+        margin-bottom: 0.2em;
+        margin-left: 0px;
+    }
+    section .workpieces .left {
+        width: 41.375vw;
+        padding: 0px;
+        margin-right: 1.75vw;
+    }
+    section .workpieces .middle {
+        width: 41.375vw;
+        padding: 0px;
+        margin-right: 0px;
+    }
+    section .workpieces .line {
+        margin-bottom: 2vh;
+    }
+    footer {
+        font-size: 10px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    section .workcon2 p {
+        width: 85%;
+    }
+    .survey {
+        padding: 0 5vw;
+    }
+    .survey h1 {
+        font-size: 1.5rem;
+    }
+    .survey-button {
+        width: 20vw;
+    }
+}
+@media (max-width: 940px) and (min-width: 830px) {
+    section .about-us .right {
+        font-size: 13px;
+    }
+}
+@media (max-width: 1000px) and (min-width: 940px) {
+    section .about-us .right {
+        font-size: 14px;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .click:hover{
+        color:transparent;
+        transform: scale(0.97);
+        background-color: rgb(110, 216, 50);
+    }
+    .click:hover::before{
+        transform: translateX(120%);
+    }
+    .survey-button:hover {
+        transform: scale(0.97);
+        background-color: rgb(255, 110, 127);
+        color: transparent;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.4);
+    }
+    .survey-button:hover::before {
+        background-color: #ff6e7f;
+        color: white;
+    }
+    #upbutton:hover {
+        background-color: #e2e2e2;
+        box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.8);
+    }
+}
