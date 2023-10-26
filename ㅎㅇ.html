@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  
+  <head> 
+    <title>대뇌</title> 
+    <style>
+      *{
+        overflow: hidden;
+      }
+      .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #b1 {
+        position: absolute;
+        left: 65%;
+        top: 25%;
+      }
+      #b2 {
+        position: absolute;
+        left: 45%;
+        top: 45%;
+      }
+      #b3 {
+        position: absolute;
+        left: 20%;
+        top: 45%;
+      }
+      #b4 {
+        position: absolute;
+        left: 35%;
+        top: 25%
+      }
+      p {
+        text-align: left;
+        font-weight: 400;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="뇌.jpg" alt="뇌" style="width:50vw;">
+      <button id="b1" onclick="bchange1()">전두엽</button>
+      <button id="b2" onclick="bchange2()">측두엽</button>
+      <button id="b3" onclick="bchange3()">후두엽 </button>
+      <button id="b4" onclick="bchange4()">두정엽</button>
+      <p id="explain"> 『버튼을 눌러 설명을 확인해보세요.』</p>
+    </div>
+  </body>
+  <script>
+    const explain = document.getElementById('explain');
+          function bchange1() {
+            explain.innerHTML = "> 대뇌에서 가장 큰 엽입니다. 주로 합리적 판단과 대인관계능력, 실행 능력을 담당합니다. 또한 인간의 자아 형성에 가장 기초가 되고, 단기기억과 미래계획 기억을 가능하게 해줍니다.  ";
+          }
+          function bchange2() {
+            explain.innerHTML = "> 대뇌의 양쪽 옆면에 위치하며, 청각이 일차적으로 전달되는 부분이다. 또한 언어의 이해에 관여하며, 사람의 얼굴을 알아보는 기능을 하기도 합니다.";
+          }
+          function bchange3() {
+            explain.innerHTML = "> 대뇌의 뒷면에 위치해 있습니다. 시각 통로에서 압력을 받으며 시각 기능에 관여하고, 이 부분에 산소가 부족하면 환각이 생길 수도 있습니다 .";
+          }
+          function bchange4() {
+            explain.innerHTML = "> 대뇌에 윗부분에 위치하며, 유입되는 신체 감각 정보를 처리하는 기능을 가지고 있습니다. 각 신체에서 온 감각 정보가 모두 여기로 모여 신체에 대한 이미지를 형성합니다.";
+          }
+        
+  </script>
+</html>
+
